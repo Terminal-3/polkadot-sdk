@@ -1,78 +1,58 @@
 [package]
 name = "sc-cli"
 version = "0.55.0"
-authors.workspace = true
+authors = ["Parity Technologies <admin@parity.io>"]
 description = "Substrate CLI interface."
-edition.workspace = true
+edition = "2021"
 license = "GPL-3.0-or-later WITH Classpath-exception-2.0"
-homepage.workspace = true
-repository.workspace = true
+homepage = "https://paritytech.github.io/polkadot-sdk/"
+repository = "https://github.com/paritytech/polkadot-sdk.git"
 readme = "README.md"
-
-[lints]
-workspace = true
 
 [package.metadata.docs.rs]
 targets = ["x86_64-unknown-linux-gnu"]
 
 [dependencies]
-array-bytes = { workspace = true, default-features = true }
-bip39 = { workspace = true, default-features = true, features = ["rand"] }
-chrono = { workspace = true }
-clap = { features = ["derive", "string", "wrap_help"], workspace = true }
-codec = { workspace = true, default-features = true }
-fdlimit = { workspace = true }
-futures = { workspace = true }
-itertools = { workspace = true }
-libp2p-identity = { features = ["ed25519", "peerid"], workspace = true }
-log = { workspace = true, default-features = true }
-names = { workspace = true }
-rand = { workspace = true, default-features = true }
-regex = { workspace = true }
-rpassword = { workspace = true }
-sc-client-api.workspace = true
-sc-client-api.default-features = true
-sc-client-db.workspace = true
-sc-client-db.default-features = false
-sc-keystore.workspace = true
-sc-keystore.default-features = true
-sc-mixnet.workspace = true
-sc-mixnet.default-features = true
-sc-network.workspace = true
-sc-network.default-features = true
-sc-service.workspace = true
-sc-service.default-features = false
-sc-telemetry.workspace = true
-sc-telemetry.default-features = true
-sc-tracing.workspace = true
-sc-tracing.default-features = true
-sc-transaction-pool.workspace = true
-sc-transaction-pool.default-features = true
-sc-utils.workspace = true
-sc-utils.default-features = true
-serde = { workspace = true, default-features = true }
-serde_json = { workspace = true, default-features = true }
-sp-blockchain.workspace = true
-sp-blockchain.default-features = true
-sp-core.workspace = true
-sp-core.default-features = true
-sp-keyring.workspace = true
-sp-keyring.default-features = true
-sp-keystore.workspace = true
-sp-keystore.default-features = true
-sp-panic-handler.workspace = true
-sp-panic-handler.default-features = true
-sp-runtime.workspace = true
-sp-runtime.default-features = true
-sp-version.workspace = true
-sp-version.default-features = true
-thiserror = { workspace = true }
-tokio = { features = ["parking_lot", "rt-multi-thread", "signal"], workspace = true, default-features = true }
+array-bytes = { version = "6.2.2", default-features = true }
+bip39 = { package = "parity-bip39", version = "2.0.1", features = ["rand"] }
+chrono = { version = "0.4.31" }
+clap = { version = "4.5.13", features = ["derive", "string", "wrap_help"] }
+codec = { package = "parity-scale-codec", version = "3.7.5", default-features = true }
+fdlimit = { version = "0.3.0" }
+futures = { version = "0.3.31" }
+itertools = { version = "0.11" }
+libp2p-identity = { version = "0.2.9", features = ["ed25519", "peerid"] }
+log = { version = "0.4.22", default-features = true }
+names = { version = "0.14.0", default-features = false }
+rand = { version = "0.8.5", default-features = true }
+regex = { version = "1.10.2" }
+rpassword = { version = "7.0.0" }
+sc-client-api = { version = "42.0.0", default-features = true }
+sc-client-db = { version = "0.49.0", default-features = false }
+sc-keystore = { version = "38.0.0", default-features = true }
+sc-mixnet = { version = "0.23.0", default-features = true }
+sc-network = { version = "0.53.0", default-features = true }
+sc-service = { version = "0.54.0", default-features = false }
+sc-telemetry = { version = "30.0.0", default-features = true }
+sc-tracing = { version = "42.0.0", default-features = true }
+sc-transaction-pool = { version = "42.0.0", default-features = true }
+sc-utils = { version = "20.0.0", default-features = true }
+serde = { version = "1.0.214", default-features = true }
+serde_json = { version = "1.0.132", default-features = true }
+sp-blockchain = { version = "42.0.0", default-features = true }
+sp-core = { version = "38.1.0", default-features = true }
+sp-keyring = { version = "44.0.0", default-features = true }
+sp-keystore = { version = "0.44.1", default-features = true }
+sp-panic-handler = { version = "13.0.2", default-features = true }
+sp-runtime = { version = "44.0.0", default-features = true }
+sp-version = { version = "42.0.0", default-features = true }
+thiserror = { version = "1.0.64" }
+tokio = { version = "1.45.0", features = ["parking_lot", "rt-multi-thread", "signal"], default-features = true }
 
 [dev-dependencies]
-futures-timer = { workspace = true }
-sp-tracing = { default-features = true, path = "../../primitives/tracing" }
-tempfile = { workspace = true }
+futures-timer = { version = "3.0.2" }
+sp-tracing = { version = "19.0.0", default-features = true }
+tempfile = { version = "3.8.1" }
 
 [features]
 default = ["rocksdb"]
